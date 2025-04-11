@@ -1,4 +1,5 @@
 # learn-cicd-starter (Notely)
+![dynamic badge](https://github.com/josequiceno2000/learn-cicd-starter/actions/workflows/ci/badge.sv)
 
 This repo contains the starter code for the "Notely" application for the "Learn CICD" course on [Boot.dev](https://boot.dev).
 
