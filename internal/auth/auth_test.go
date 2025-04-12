@@ -7,35 +7,35 @@ import (
 
 func TestGetAPIKey(t *testing.T) {
 	tests := []struct {
-		name			string
-		authHeader		string
-		expectedKey		string
-		expectingErr	bool
-		expectedErr		error
+		name         string
+		authHeader   string
+		expectedKey  string
+		expectingErr bool
+		expectedErr  error
 	}{
 		{
-			name: "no auth header",
-			authHeader: "",
-			expectedKey: "",
+			name:         "no auth header",
+			authHeader:   "",
+			expectedKey:  "",
 			expectingErr: true,
-			expectedErr: ErrNoAuthHeaderIncluded,
+			expectedErr:  ErrNoAuthHeaderIncluded,
 		},
 		{
-			name: "malformed header - missing ApiKey prefix",
-			authHeader: "Bearer abcdef123",
-			expectedKey: "",
-			expectingErr: true,
-		},
-		{
-			name: "malformed header - only one part",
-			authHeader: "ApiKeyOnly",
-			expectedKey: "",
+			name:         "malformed header - missing ApiKey prefix",
+			authHeader:   "Bearer abcdef123",
+			expectedKey:  "",
 			expectingErr: true,
 		},
 		{
-			name: "valid header",
-			authHeader: "ApiKey my-secret-key",
-			expectedKey: "my-secret-key",
+			name:         "malformed header - only one part",
+			authHeader:   "ApiKeyOnly",
+			expectedKey:  "",
+			expectingErr: true,
+		},
+		{
+			name:         "valid header",
+			authHeader:   "ApiKey my-secret-key",
+			expectedKey:  "my-secret-key",
 			expectingErr: false,
 		},
 	}
